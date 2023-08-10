@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Scene fx:id="scene" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <AnchorPane prefHeight="200" prefWidth="200">
+      <children>
+         <VBox prefHeight="750.0" prefWidth="1340.0">
+            <children>
+               <MenuBar fx:id="menuBar" prefHeight="26.0" prefWidth="1050.0">
+                 <menus>
+                   <Menu fx:id="fileMenuItem" mnemonicParsing="false" text="File">
+                     <items>
+                       <MenuItem fx:id="m1" mnemonicParsing="false" text="File">
+                              <graphic>
+                                 <Button fx:id="openFile" mnemonicParsing="false" text="Open" />
+                              </graphic></MenuItem>
+                           <MenuItem fx:id="m2" mnemonicParsing="false" text="File">
+                              <graphic>
+                                 <Button fx:id="saveFile" mnemonicParsing="false" text="Save" />
+                              </graphic>
+                           </MenuItem>
+                           <MenuItem fx:id="m15" mnemonicParsing="false" text="Template">
+                              <graphic>
+                                 <Button fx:id="openTemplate" mnemonicParsing="false" text="Open" />
+                              </graphic>
+                           </MenuItem>
+                           <MenuItem fx:id="m100" mnemonicParsing="false" text="Password">
+                              <graphic>
+                                 <Button fx:id="changePassword" mnemonicParsing="false" text="Change" />
+                              </graphic>
+                           </MenuItem>
+                     </items>
+                   </Menu>
+                   <Menu fx:id="createMenuItem" mnemonicParsing="false" text="Create">
+                     <items>
+                       <MenuItem fx:id="m3" mnemonicParsing="false" text="Task">
+                              <graphic>
+                                 <Button fx:id="createTask" mnemonicParsing="false" prefHeight="26.0" prefWidth="84.0" text="Create" />
+                              </graphic></MenuItem>
+                           <MenuItem fx:id="m4" mnemonicParsing="false" text="Event">
+                              <graphic>
+                                 <Button fx:id="createEvent" mnemonicParsing="false" prefHeight="26.0" prefWidth="84.0" text="Create" />
+                              </graphic>
+                           </MenuItem>
+                     </items>
+                   </Menu>
+                   <Menu fx:id="helpMenuItem" mnemonicParsing="false" text="Help">
+                     <items>
+                       <MenuItem fx:id="m8" mnemonicParsing="false" text="ctrl + e -&gt; New Event" />
+                           <MenuItem fx:id="m9" mnemonicParsing="false" text="ctrl + t -&gt; New Task" />
+                           <MenuItem fx:id="m10" mnemonicParsing="false" text="ctrl + s -&gt; Save to File" />
+                           <MenuItem fx:id="m11" mnemonicParsing="false" text="ctrl + o -&gt; Open New File" />
+                           <MenuItem fx:id="m12" mnemonicParsing="false" text="ctrl + n -&gt; Create New Week" />
+                           <MenuItem fx:id="m13" mnemonicParsing="false" text="ctrl + w -&gt; Mark Task as Complete" />
+                           <MenuItem fx:id="m14" mnemonicParsing="false" text="ctrl +  c -&gt; Search for Task" />
+                     </items>
+                   </Menu>
+                     <Menu fx:id="startingDay" mnemonicParsing="false" text="Starting Day">
+                        <items>
+                           <MenuItem fx:id="m511" mnemonicParsing="false">
+                              <graphic>
+                                 <Button fx:id="startSunday" mnemonicParsing="false" text="Sunday" />
+                              </graphic>
+                           </MenuItem>
+                           <MenuItem fx:id="m51" mnemonicParsing="false">
+                              <graphic>
+                                 <Button fx:id="startMonday" mnemonicParsing="false" text="Monday" />
+                              </graphic>
+                           </MenuItem>
+                           <MenuItem fx:id="m5111" mnemonicParsing="false">
+                              <graphic>
+                                 <Button fx:id="startTuesday" mnemonicParsing="false" text="Tuesday" />
+                              </graphic>
+                           </MenuItem>
+                           <MenuItem fx:id="m5112" mnemonicParsing="false">
+                              <graphic>
+                                 <Button fx:id="startWednesday" mnemonicParsing="false" text="Wednesday" />
+                              </graphic>
+                           </MenuItem>
+                           <MenuItem fx:id="m5113" mnemonicParsing="false">
+                              <graphic>
+                                 <Button fx:id="startThursday" mnemonicParsing="false" text="Thursday" />
+                              </graphic>
+                           </MenuItem>
+                           <MenuItem fx:id="m5114" mnemonicParsing="false">
+                              <graphic>
+                                 <Button fx:id="startFriday" mnemonicParsing="false" text="Friday" />
+                              </graphic>
+                           </MenuItem>
+                           <MenuItem fx:id="m5115" mnemonicParsing="false">
+                              <graphic>
+                                 <Button fx:id="startSaturday" mnemonicParsing="false" text="Saturday" />
+                              </graphic>
+                           </MenuItem>
+                        </items>
+                     </Menu>
+                 </menus>
+               </MenuBar>
+               <HBox fx:id="taskOrEventBar" prefHeight="25.6" prefWidth="1050.0">
+                  <children>
+                     <Button fx:id="maxTask" mnemonicParsing="false" text="Max Tasks" />
+                     <Button fx:id="maxEvent" mnemonicParsing="false" text="Max Events" />
+                     <Button fx:id="taskComplete" mnemonicParsing="false" text="Task Complete?" />
+                     <Button fx:id="setTitle" alignment="CENTER" mnemonicParsing="false" text="Set Title" />
+                     <TextField fx:id="typeTitle" alignment="CENTER" />
+                     <Text fx:id="weeklyOverview" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="692.13671875" />
+                  </children>
+               </HBox>
+               <VBox fx:id="verticalWeek" prefHeight="5.0" prefWidth="1325.0" />
+               <Line fx:id="topLine" endX="1260.997802734375" endY="4.57763690064894E-6" startX="-100.0" stroke="#9e6400" strokeWidth="5.0" />
+               <HBox fx:id="week" prefHeight="600.0" prefWidth="1050.0">
+                  <children>
+                     <VBox fx:id="taskQueueVbox" prefHeight="200.0" prefWidth="150.0">
+                        <children>
+                           <Label fx:id="taskQueue" alignment="CENTER" prefHeight="30.0" prefWidth="158.0" text="Task Queue" textAlignment="CENTER">
+                              <font>
+                                 <Font name="Berlin Sans FB" size="21.0" />
+                              </font>
+                           </Label>
+                           <TextArea fx:id="taskQueueArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="254.0" prefWidth="166.0" />
+                           <ImageView fitHeight="271.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@dancing-duck-cute-walking-head-bopping-00wvacjyl2zm4nwa.gif" />
+                              </image></ImageView>
+                           <ImageView fitHeight="130.0" fitWidth="174.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@screaming.gif" />
+                              </image>
+                           </ImageView>
+                        </children>
+                     </VBox>
+                     <Line fx:id="sundayLine" endX="-97.32134246826172" endY="571.4786376953125" startX="-100.0" stroke="#966060" strokeWidth="3.0" />
+                     <VBox fx:id="sunday" prefHeight="200.0" prefWidth="150.0">
+                        <children>
+                           <HBox fx:id="sundayTop" prefHeight="24.0" prefWidth="200.0">
+                              <children>
+                                 <Text fx:id="sundayTasksRemaining" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="22.13671875" />
+                                 <Label fx:id="sundayLabel" alignment="CENTER" prefHeight="18.0" prefWidth="158.0" text="Sunday" textAlignment="CENTER" textFill="#966060">
+                                    <font>
+                                       <Font name="Berlin Sans FB" size="21.0" />
+                                    </font>
+                                 </Label>
+                                 <Button fx:id="sundayAdd" mnemonicParsing="false" text="+">
+                                    <font>
+                                       <Font size="14.0" />
+                                    </font>
+                                 </Button>
+                              </children>
+                           </HBox>
+                           <ProgressBar fx:id="sundayProgressBar" minHeight="-Infinity" prefHeight="15.0" prefWidth="165.0" progress="0.0" />
+                           <TextArea fx:id="sundayArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="166.0" />
+                        </children>
+                     </VBox>
+                     <Line fx:id="mondayLine" endX="-99.293212890625" endY="571.2119750976562" startX="-100.0" stroke="#c90000" strokeWidth="3.0" />
+                     <VBox fx:id="monday" prefHeight="200.0" prefWidth="150.0">
+                        <children>
+                           <HBox fx:id="mondayTop" prefHeight="24.0" prefWidth="200.0">
+                              <children>
+                                 <Text fx:id="mondayTasksRemaining" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="22.13671875" />
+                                 <Label fx:id="mondayLabel" alignment="CENTER" prefHeight="18.0" prefWidth="158.0" text="Monday" textAlignment="CENTER" textFill="#c90000">
+                                    <font>
+                                       <Font name="Berlin Sans FB" size="21.0" />
+                                    </font>
+                                 </Label>
+                                 <Button fx:id="mondayAdd" mnemonicParsing="false" text="+">
+                                    <font>
+                                       <Font size="14.0" />
+                                    </font>
+                                 </Button>
+                              </children>
+                           </HBox>
+                           <ProgressBar fx:id="mondayProgressBar" minHeight="-Infinity" prefHeight="15.0" prefWidth="165.0" progress="0.0" />
+                           <TextArea fx:id="mondayArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="166.0" />
+                        </children>
+                     </VBox>
+                     <Line fx:id="tuesdayLine" endX="-99.37886810302734" endY="571.2119750976562" startX="-100.0" stroke="#d1af00" strokeWidth="3.0" />
+                     <VBox fx:id="tuesday" prefHeight="200.0" prefWidth="150.0">
+                        <children>
+                           <HBox fx:id="tuesdayTop" prefHeight="24.0" prefWidth="200.0">
+                              <children>
+                                 <Text fx:id="tuesdayTasksRemaining" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="22.13671875" />
+                                 <Label fx:id="tuesdayLabel" alignment="CENTER" prefHeight="18.0" prefWidth="158.0" text="Tuesday" textAlignment="CENTER" textFill="#d1af00">
+                                    <font>
+                                       <Font name="Berlin Sans FB" size="21.0" />
+                                    </font>
+                                 </Label>
+                                 <Button fx:id="tuesdayAdd" mnemonicParsing="false" text="+">
+                                    <font>
+                                       <Font size="14.0" />
+                                    </font>
+                                 </Button>
+                              </children>
+                           </HBox>
+                           <ProgressBar fx:id="tuesdayProgressBar" minHeight="-Infinity" prefHeight="15.0" prefWidth="165.0" progress="0.0" />
+                           <TextArea fx:id="tuesdayArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="166.0" />
+                        </children>
+                     </VBox>
+                     <Line fx:id="wednesdayLine" endX="-98.75751495361328" endY="571.2119750976562" startX="-100.0" stroke="#4cbd00" strokeWidth="3.0" />
+                     <VBox fx:id="wednesday" prefHeight="200.0" prefWidth="150.0">
+                        <children>
+                           <HBox fx:id="wednesdayTop" prefHeight="24.0" prefWidth="200.0">
+                              <children>
+                                 <Text fx:id="wednesdayTasksRemaining" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="22.13671875" />
+                                 <Label fx:id="wednesdayLabel" alignment="CENTER" prefHeight="18.0" prefWidth="158.0" text="Wednesday" textFill="#4cbd00">
+                                    <font>
+                                       <Font name="Berlin Sans FB" size="21.0" />
+                                    </font>
+                                 </Label>
+                                 <Button fx:id="wednesdayAdd" mnemonicParsing="false" text="+">
+                                    <font>
+                                       <Font size="14.0" />
+                                    </font>
+                                 </Button>
+                              </children>
+                           </HBox>
+                           <ProgressBar fx:id="wednesdayProgressBar" minHeight="-Infinity" prefHeight="15.0" prefWidth="165.0" progress="0.0" />
+                           <TextArea fx:id="wednesdayArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="166.0" />
+                        </children>
+                     </VBox>
+                     <Line fx:id="thursdayLine" endX="-99.171630859375" endY="571.2119750976562" startX="-100.0" stroke="#002bab" strokeWidth="3.0" />
+                     <VBox fx:id="thursday" prefHeight="200.0" prefWidth="150.0">
+                        <children>
+                           <HBox fx:id="thursdayTop" prefHeight="24.0" prefWidth="200.0">
+                              <children>
+                                 <Text fx:id="thursdayTasksRemaining" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="22.13671875" />
+                                 <Label fx:id="thursdayLabel" alignment="CENTER" prefHeight="18.0" prefWidth="158.0" text="Thursday" textFill="#002bab">
+                                    <font>
+                                       <Font name="Berlin Sans FB" size="21.0" />
+                                    </font>
+                                 </Label>
+                                 <Button fx:id="thursdayAdd" mnemonicParsing="false" text="+">
+                                    <font>
+                                       <Font size="14.0" />
+                                    </font>
+                                 </Button>
+                              </children>
+                           </HBox>
+                           <ProgressBar fx:id="thursdayProgressBar" minHeight="-Infinity" prefHeight="15.0" prefWidth="165.0" progress="0.0" />
+                           <TextArea fx:id="thursdayArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="166.0" />
+                        </children>
+                     </VBox>
+                     <Line fx:id="fridayLine" endX="-99.17137145996094" endY="571.2119750976562" startX="-100.0" stroke="#9c00a3" strokeWidth="3.0" />
+                     <VBox fx:id="friday" prefHeight="200.0" prefWidth="150.0">
+                        <children>
+                           <HBox fx:id="fridayTop" prefHeight="24.0" prefWidth="200.0">
+                              <children>
+                                 <Text fx:id="fridayTasksRemaining" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="22.13671875" />
+                                 <Label fx:id="fridayLabel" alignment="CENTER" prefHeight="18.0" prefWidth="158.0" text="Friday" textAlignment="CENTER" textFill="#9c00a3">
+                                    <font>
+                                       <Font name="Berlin Sans FB" size="21.0" />
+                                    </font>
+                                 </Label>
+                                 <Button fx:id="fridayAdd" mnemonicParsing="false" text="+">
+                                    <font>
+                                       <Font size="14.0" />
+                                    </font>
+                                 </Button>
+                              </children>
+                           </HBox>
+                           <ProgressBar fx:id="fridayProgressBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="15.0" prefWidth="165.0" progress="0.0" />
+                           <TextArea fx:id="fridayArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="166.0" />
+                        </children>
+                     </VBox>
+                     <Line fx:id="saturdayLine" endX="-99.17141723632812" endY="571.2119750976562" startX="-100.0" stroke="#c44d82" strokeWidth="3.0" />
+                     <VBox fx:id="saturday" prefHeight="200.0" prefWidth="150.0">
+                        <children>
+                           <HBox fx:id="saturdayTop" prefHeight="24.0" prefWidth="200.0">
+                              <children>
+                                 <Text fx:id="saturdayTasksRemaining" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="22.13671875" />
+                                 <Label fx:id="saturdayLabel" alignment="CENTER" prefHeight="18.0" prefWidth="158.0" text="Saturday" textAlignment="CENTER" textFill="#c44d82">
+                                    <font>
+                                       <Font name="Berlin Sans FB" size="21.0" />
+                                    </font>
+                                 </Label>
+                                 <Button fx:id="saturdayAdd" mnemonicParsing="false" text="+">
+                                    <font>
+                                       <Font size="14.0" />
+                                    </font>
+                                 </Button>
+                              </children>
+                           </HBox>
+                           <ProgressBar fx:id="saturdayProgressBar" minHeight="-Infinity" minWidth="-Infinity" prefHeight="15.0" prefWidth="165.0" progress="0.0" />
+                           <TextArea fx:id="saturdayArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="166.0" />
+                        </children>
+                     </VBox>
+                  </children>
+               </HBox>
+               <Line endX="1261.5311279296875" endY="0.2071540802717209" startX="-100.0" stroke="#00a672" strokeWidth="5.0" />
+               <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                     <ImageView fitHeight="166.0" fitWidth="214.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@ot092.png" />
+                        </image>
+                     </ImageView>
+                     <Line endX="-99.04267883300781" endY="164.27867126464844" startX="-100.0" stroke="#966060" strokeWidth="3.0" />
+                     <TextArea fx:id="quotesAndNotes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="166.0" prefWidth="1021.0" />
+                     <Line endX="-97.93553924560547" endY="161.64625549316406" startX="-100.0" stroke="#00a672" strokeWidth="5.0" />
+                     <ImageView fitHeight="170.0" fitWidth="168.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@ot092_2.png" />
+                        </image>
+                     </ImageView>
+                  </children>
+               </HBox>
+            </children>
+         </VBox>
+      </children></AnchorPane>
+</Scene>

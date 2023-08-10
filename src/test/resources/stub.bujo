@@ -1,0 +1,38 @@
+{
+  "title": "My Journal",
+  "tasks": [
+    {
+      "name": "First Task",
+      "description": "Description of the task",
+      "day": "SUNDAY",
+      "complete": false
+    },
+    {
+      "name": "Monday task",
+      "description": "Monday's description",
+      "day": "MONDAY",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "name": "First event",
+      "description": "First description of an event",
+      "day": "SUNDAY",
+      "time": "4/4",
+      "duration": "999 years"
+    },
+    {
+      "name": "Another event",
+      "description": "An event",
+      "day": "SATURDAY",
+      "time": "5/5",
+      "duration": "800 minutes"
+    }
+  ],
+  "thresholds": {
+    "maxEvents": 100,
+    "maxTasks": 100
+  },
+  "password": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"
+}
